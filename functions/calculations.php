@@ -32,10 +32,12 @@
         ];
     }
 
-    function cesar($clear, $key, $reverse = false){
-        $alphabetLower = 'abcdefghijklmnopqrstuvwxyz';
-        // $alphabetUpper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $alphabet = str_split($alphabetLower);
+    function cesar($clear, $key, $reverse = false) {
+        if ($key > 25 || $key < 0)
+            return ['result' => ''];
+        
+        $alphabet = 'abcdefghijklmnopqrstuvwxyz';
+        $alphabet = str_split($alphabet);
         $accents = array(
             'à' => 'a','â' => 'a','ä' => 'a','é' => 'e','è' => 'e','ê' => 'e','ë' => 'e','î' => 'i','ï' => 'i','ô' => 'o','ö' => 'o','ù' => 'u','û' => 'u','ü' => 'u','ÿ' => 'y','ç' => 'c','À' => 'A','Â' => 'A','Ä' => 'A','É' => 'E','È' => 'E','Ê' => 'E','Ë' => 'E','Î' => 'I','Ï' => 'I','Ô' => 'O','Ö' => 'O','Ù' => 'U','Û' => 'U','Ü' => 'U','Ÿ' => 'Y','Ç' => 'C'
         );
@@ -50,14 +52,13 @@
         foreach ($clear as $letter) {
             if (ctype_alpha($letter)) {
                 $index = array_search($letter, $alphabet);
-                // $result .= '|'.($index + $key).' ['.$index.' => ';
                 $index = $reverse ? $index - $key : $index + $key;
+
                 if($index > (count($alphabet) - 1)) {
                     $index = $index % count($alphabet);
                 } else if ($index < 0){
-                    $index = $index + count($alphabet);
+                    $index += count($alphabet);
                 }
-                // $result .= $index.']'.$alphabet[$index];
                 $result .= $alphabet[$index];
             }
             else {
