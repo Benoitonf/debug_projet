@@ -10,7 +10,7 @@ if (!empty($_POST)) {
         'name' => $_POST['name'],
         'email' => $_POST['email'],
         'subject' => $_POST['subject'],
-        'message' => $_POST['message']
+        'message' => htmlspecialchars($_POST['message'], ENT_QUOTES)
     );
 
     $validated_items = validate($submited_items, array(
@@ -25,6 +25,7 @@ if (!empty($_POST)) {
             'label' => 'Email',
             'required' => true,
             'sanitize' => 'email',
+            'regexp' => '/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i'
         ),
         'subject' => array(
             'label' => 'Subject',
@@ -43,8 +44,10 @@ if (!empty($_POST)) {
     if (!is_passed($result)) {
         $messages = $result;
     } else {
-        if(insert('admin_messages', $result)) {
-            $messages['success'][] = 'Message envoyé !';
+        if (mail($_POST['email'], "MyToolBox - Formulaire de contact", "Bonjour ".$_POST['name'].",\n\nNous avons bien reçu votre demande.\nMytoolbox.")) {
+            if(insert('admin_messages', $result)) {
+                $messages['success'][] = 'Message envoyé !';
+            }
         }
     }
 }

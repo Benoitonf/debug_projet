@@ -34,7 +34,7 @@
 
     function cesar($clear, $key, $reverse = false) {
         if ($key > 25 || $key < 0)
-            return ['result' => ''];
+            return [];
         
         $alphabet = 'abcdefghijklmnopqrstuvwxyz';
         $alphabet = str_split($alphabet);
