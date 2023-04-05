@@ -10,9 +10,10 @@ if (!empty($_POST)) {
         'name' => $_POST['name'],
         'email' => $_POST['email'],
         'subject' => $_POST['subject'],
-        'message' => htmlspecialchars($_POST['message'], ENT_QUOTES)
+        'message' => htmlspecialchars($_POST['message'], ENT_QUOTES),
+        'checkbox' => isset($_POST['checkbox']) ? $_POST['checkbox'] : null
     );
-
+    
     $validated_items = validate($submited_items, array(
         'name' => array(
             'label' => 'Name',
@@ -36,6 +37,10 @@ if (!empty($_POST)) {
             'label' => 'Message',
             'required' => true,
             'sanitize' => 'string',
+        ),
+        'checkbox' => array(
+            'label' => 'Données personnelles',
+            'required' => true
         )
     ));
 
@@ -107,7 +112,7 @@ if (!empty($_POST)) {
                         <div class="row mt-4">
                             <div class="col-md-6">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <input class="form-check-input" type="checkbox" value="true" id="flexCheckDefault" name="checkbox">
                                     <label class="form-check-label" for="flexCheckDefault">
                                         J'accepte que mes données soient utilisées dans le cadre de demande de fonctionnalité
                                     </label>
