@@ -3,7 +3,7 @@
 function sanitize($item, $type) {
     switch($type) {
         case 'string':
-            $item = filter_var($item, FILTER_SANITIZE_STRING);
+            $item = htmlspecialchars($item, ENT_QUOTES);
             break;
         case 'email':
             $item = filter_var($item, FILTER_SANITIZE_EMAIL);
@@ -60,7 +60,6 @@ function validate(array $items, array $rule_items) {
                             $result['danger'][] = $form_label . ' does not match';
                         }
                         break;
-
                 }
 
                 $result['item'] = $form_items;

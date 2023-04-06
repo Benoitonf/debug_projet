@@ -7,9 +7,9 @@ $messages = [];
 // Send contact form to database
 if (!empty($_POST)) {
     $submited_items = array(
-        'name' => $_POST['name'],
+        'name' => htmlspecialchars($_POST['name'], ENT_QUOTES),
         'email' => $_POST['email'],
-        'subject' => $_POST['subject'],
+        'subject' => htmlspecialchars($_POST['subject'], ENT_QUOTES),
         'message' => htmlspecialchars($_POST['message'], ENT_QUOTES),
         'checkbox' => isset($_POST['checkbox']) ? $_POST['checkbox'] : null
     );
@@ -20,7 +20,7 @@ if (!empty($_POST)) {
             'required' => true,
             'sanitize' => 'string',
             'min' => 2,
-            'regexp' => '/^[a-zA-Z0-9]+$/'
+            'regexp' => '/^[a-zA-Z\' ]+$/'
         ),
         'email' => array(
             'label' => 'Email',
