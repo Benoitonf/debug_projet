@@ -100,3 +100,20 @@
             ];
         }
     }
+
+    function convertCurrencies($from, $to, $amount) {
+        $url = 'https://open.er-api.com/v6/latest/' . $from;
+        $data = file_get_contents($url);
+        $data = json_decode($data, true);
+        $rate = $data['rates'][$to];
+
+        return [
+            'RESULT' => round($amount * $rate, 2)
+        ];
+    }
+
+    function convertVolumes($from, $to, $amount) {
+        return [
+            'RESULT' => $amount * $from / $to
+        ];
+    }

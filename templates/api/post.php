@@ -90,18 +90,28 @@ switch ($body->form){
         ];
         echo json_encode($data);
         break;
-    case 'euros-dollars':
+    case 'convert':
 
-        $EUR = null;
-        $USD = null;
-        if(property_exists($body, 'EUR')){
-            $EUR = $body->EUR;
+        $AMOUNT = null;
+        $FROM = null;
+        $TO = null;
+        if(property_exists($body, 'AMOUNT')){
+            $AMOUNT = $body->AMOUNT;
         }
-        if(property_exists($body, 'USD')){
-            $USD = $body->USD;
+        if(property_exists($body, 'FROM')){
+            $FROM = $body->FROM;
+        }
+        if(property_exists($body, 'TO')){
+            $TO = $body->TO;
         }
 
-        $result = convertEuroDollars($EUR, $USD);
+        if (property_exists($body, 'DEVISE')) {
+            $result = convertCurrencies($FROM, $TO, $AMOUNT);
+        }
+        if (property_exists($body, 'VOLUME')) {
+            $result = convertVolumes($FROM, $TO, $AMOUNT);
+        }
+
 
         $data = [
             'response' => 'success',
