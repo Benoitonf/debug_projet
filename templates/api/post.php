@@ -112,7 +112,6 @@ switch ($body->form){
             $result = convertVolumes($FROM, $TO, $AMOUNT);
         }
 
-
         $data = [
             'response' => 'success',
             'message' => 'Calcul réussi',

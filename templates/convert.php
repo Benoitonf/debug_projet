@@ -8,12 +8,12 @@ template('header', array(
     <section id="homepage" class="homepage">
         <div class="container">
             <div class="section-title">
-                <h2>Convertisseur de devise</h2>
+                <h2>Convertisseur</h2>
             </div>
 
             <div class="row">
             <fieldset class="col-12 mb-5">
-                <legend>Devise</legend>
+                <legend>Convertisseur de devise</legend>
                 <form action="" method="post" name="convert">
                     <input type="hidden" name="DEVISE"/>
                     <div class="form-group row">
@@ -57,13 +57,9 @@ template('header', array(
             </fieldset>
             </div>
 
-            <div class="section-title">
-                <h2>Convertisseur de volume</h2>
-            </div>
-
             <div class="row">
             <fieldset class="col-12 mb-5">
-                <legend>Volume</legend>
+                <legend>Convertisseur de volume</legend>
                 <form action="" method="post" name="convert">
                     <div class="form-group row">
                         <div class="col">

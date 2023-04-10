@@ -61,28 +61,12 @@
             let forms = document.forms;
             let decimal = forms['decimal-hexadecimal'].elements['decimal'];
 
-            function dec2Hex(dec) {
-                return Math.abs(dec).toString(16);
-            }
-
-            function convertToBinary(x) {
-                let bin = 0;
-                let rem, i = 1, step = 1;
-                while (x !== 0) {
-                    rem = x % 2;
-                    x = parseInt(x / 2);
-                    bin = bin + rem * i;
-                    i = i * 10;
-                }
-                return bin;
-            }
-
             decimal.addEventListener('input', () => {
                 let hex = forms['decimal-hexadecimal'].elements['hex'];
                 let binary = forms['decimal-hexadecimal'].elements['binary'];
 
-                hex.value = dec2Hex(decimal.value);
-                binary.value = convertToBinary(decimal.value);
+                hex.value = parseInt(decimal.value).toString(16);
+                binary.value = parseInt(decimal.value).toString(2);
             });
 
         });
