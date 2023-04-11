@@ -26,6 +26,9 @@ try {
     if (in_array($requested_route, $routes)) {
         template($requested_route);
     }
+    else {
+        template('home');
+    }
 } catch (Exception $error) {
     echo $error->getMessage();
 }
