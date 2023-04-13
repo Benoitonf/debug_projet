@@ -14,37 +14,37 @@ template('header', array(
 
         <div class="row">
 
-            <fieldset class="col-12 mt-4">
+            <fieldset class="col-md-10 offset-md-1 mt-4 pb-4 d-flex justify-content-center">
                 <legend>Calculer la quantité</legend>
                 <form action="" method="POST" name="percent">
-                    <div class="form-group row">
-                        <div class="col-2">
+                    <div class="form-group row justify-content-center">
+                        <div class="col-auto">
                             <label for="percent" aria-hidden="true" hidden>Pourcentage</label>
                             <div class="input-group">
-                                <input id="percent" name="percent" type="text" class="form-control" required>
+                                <input id="percent" name="percent" type="number" class="form-control" required>
                                 <div class="input-group-append">
                                     <div class="input-group-text">%</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-2">
+                        <div class="col-auto">
                             <label for="of" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">de</div>
                                 </div>
-                                <input id="of" name="of" type="text" class="form-control" required>
+                                <input id="of" name="of" type="number" class="form-control" required>
                             </div>
                         </div>
 
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="col-auto d-inline-flex align-items-center">
                             <span class="ver">=</span>
                         </div>
 
                         <div class="col-3">
                             <label for="result" aria-hidden="true" hidden>Résultat</label>
                             <div class="input-group">
-                                <input id="result" name="result" type="text" class="form-control" disabled>
+                                <input id="result" name="result" type="number" class="form-control" disabled>
                             </div>
                         </div>
 
@@ -56,26 +56,25 @@ template('header', array(
             </fieldset>
 
 
-            <fieldset class="col-12 mt-4">
+            <fieldset class="col-md-10 offset-md-1 mt-4 pb-4 d-flex justify-content-center">
                 <legend>Calculer le nombre initial</legend>
                 <form action="" method="POST" name="percent">
-                    <div class="form-group row">
-                        <div class="col-2">
+                    <div class="form-group row justify-content-center">
+                        <div class="col-auto">
                             <label for="result" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
-                                <input id="result" name="result" type="text" class="form-control" required>
+                                <input id="result" name="result" type="number" class="form-control" required>
                             </div>
                         </div>
 
-
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="col-auto d-inline-flex align-items-center ">
                             <span class="ver">est le</span>
                         </div>
 
-                        <div class="col-2">
+                        <div class="col-auto">
                             <label for="percent" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
-                                <input id="percent" name="percent" type="text" class="form-control" required>
+                                <input id="percent" name="percent" type="number" class="form-control" required>
                                 <div class="input-group-append">
                                     <div class="input-group-text">%</div>
                                 </div>
@@ -83,15 +82,15 @@ template('header', array(
                         </div>
 
 
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="col-auto d-inline-flex align-items-center ">
                             <span class="ver">de</span>
                         </div>
 
 
-                        <div class="col-3">
+                        <div class="col-auto">
                             <label for="of" aria-hidden="true" hidden>Résultat</label>
                             <div class="input-group">
-                                <input id="of" name="of" type="text" class="form-control" disabled>
+                                <input id="of" name="of" type="number" class="form-control" disabled>
                             </div>
                         </div>
 
@@ -102,26 +101,26 @@ template('header', array(
                 </form>
             </fieldset>
 
-            <fieldset class="col-12 mt-4">
+            <fieldset class="col-md-10 offset-md-1 mt-4 pb-4 d-flex justify-content-center">
                 <legend>Calculer le pourcentage</legend>
                 <form action="" method="POST" name="percent">
-                    <div class="form-group row">
-                        <div class="col-2">
+                    <div class="form-group row justify-content-center">
+                        <div class="col-auto">
                             <label for="of" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
-                                <input id="of" name="of" type="text" class="form-control" required>
+                                <input id="of" name="of" type="number" class="form-control" required>
                             </div>
                         </div>
 
 
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="col-auto d-inline-flex align-items-center ">
                             <span class="ver">est le</span>
                         </div>
 
-                        <div class="col-2">
+                        <div class="col-auto">
                             <label for="percent" aria-hidden="true" hidden>Nombre</label>
                             <div class="input-group">
-                                <input id="percent" name="percent" type="text" class="form-control" disabled>
+                                <input id="percent" name="percent" type="number" class="form-control" disabled>
                                 <div class="input-group-append">
                                     <div class="input-group-text">%</div>
                                 </div>
@@ -129,15 +128,15 @@ template('header', array(
                         </div>
 
 
-                        <div class="d-inline-flex align-items-center ">
+                        <div class="col-auto d-inline-flex align-items-center ">
                             <span class="ver">de</span>
                         </div>
 
 
-                        <div class="col-3">
+                        <div class="col-auto">
                             <label for="result" aria-hidden="true" hidden>Résultat</label>
                             <div class="input-group">
-                                <input id="result" name="result" type="text" class="form-control" required>
+                                <input id="result" name="result" type="number" class="form-control" required>
                             </div>
                         </div>
 

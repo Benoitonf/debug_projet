@@ -23,29 +23,29 @@
             </figure>
         </div>
 
-        <div class="row">
-            <fieldset class="col-6 mt-4">
+        <div class="row justify-content-center">
+            <fieldset class="col-6 mt-4 pb-4">
                 <legend>Convertisseur</legend>
                 <form action="" name="decimal-hexadecimal">
                     <div class="form-group row">
                         <div class="col-12">
                             <label for="decimal">Décimal</label>
                             <div class="input-group">
-                                <input id="decimal" name="decimal" type="number" min="0" class="form-control" required>
+                                <input id="decimal" name="decimal" type="number" min="0" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-12">
                             <label for="hex">Héxadécimal</label>
                             <div class="input-group">
-                                <input id="hex" name="hex" type="text"  class="form-control" disabled>
+                                <input id="hex" name="hex" type="text" class="form-control">
                             </div>
                         </div>
 
                         <div class="col-12">
                             <label for="binary">Binaire</label>
                             <div class="input-group">
-                                <input id="binary" name="binary" type="text" min="0" class="form-control" disabled>
+                                <input id="binary" name="binary" type="text" class="form-control">
                             </div>
                         </div>
                     </div>
@@ -60,13 +60,32 @@
         window.addEventListener('load', () => {
             let forms = document.forms;
             let decimal = forms['decimal-hexadecimal'].elements['decimal'];
-
+            let hex = forms['decimal-hexadecimal'].elements['hex'];
+            let binary = forms['decimal-hexadecimal'].elements['binary'];
+            
             decimal.addEventListener('input', () => {
-                let hex = forms['decimal-hexadecimal'].elements['hex'];
-                let binary = forms['decimal-hexadecimal'].elements['binary'];
+                let value = parseInt(decimal.value, 10);
+                if (isNaN(value))
+                    return;
+                console.log("Decimal : ", decimal.value, " | Value : ", value);
+                hex.value = value.toString(16);
+                binary.value = value.toString(2);
+            });
 
-                hex.value = parseInt(decimal.value).toString(16);
-                binary.value = parseInt(decimal.value).toString(2);
+            hex.addEventListener('input', () => {
+                let value = parseInt(hex.value, 16)
+                if (isNaN(value))
+                    return;
+                decimal.value = value.toString(10);
+                binary.value = value.toString(2);
+            });
+
+            binary.addEventListener('input', () => {
+                let value = parseInt(binary.value, 2);
+                if (isNaN(value))
+                    return;
+                decimal.value = value.toString(10);
+                hex.value = value.toString(16);
             });
 
         });

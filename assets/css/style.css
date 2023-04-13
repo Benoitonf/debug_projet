@@ -6,8 +6,21 @@ fieldset {
 }
 
 fieldset legend {
+    float: revert;
     font-size: 1.5rem;
     margin-bottom: 1rem;
     font-weight: normal;
     color: #173b6c;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

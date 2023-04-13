@@ -8,19 +8,18 @@ template('header', array(
     <section id="homepage" class="homepage">
         <div class="container">
             <div class="section-title">
-                <h2>Convertisseur</h2>
+                <h2>Convertisseurs</h2>
             </div>
 
             <div class="row">
-            <fieldset class="col-12 mb-5">
-                <legend>Convertisseur de devise</legend>
+            <fieldset class="col-md-10 offset-md-1 mt-4 pb-4 d-flex justify-content-center">
+                <legend>Convertisseur de devises</legend>
                 <form action="" method="post" name="convert">
                     <input type="hidden" name="DEVISE"/>
-                    <div class="form-group row">
-                        <div class="col">
-                            <label for="AMOUNT" aria-hidden="true" hidden>Montant</label>
+                    <div class="form-group row justify-content-center">
+                        <div class="col-4">
                             <div class="input-group">
-                                <input id="AMOUNT" name="AMOUNT" type="text" class="form-control" required>
+                                <input id="AMOUNT" name="AMOUNT" type="text" class="form-control text-end" required>
                                 <select name="FROM" class="form-select pl-1">
                                     <option value="EUR" selected>Euros</option>
                                     <option value="CHF">Franc Suisse</option>
@@ -30,15 +29,15 @@ template('header', array(
                                 </select>
                             </div>
                         </div>
-
-                        <div class="d-inline-flex align-items-center ">
+                        
+                        <div class="col-auto d-inline-flex align-items-center">
                             <span class="ver">vaut actuellement</span>
                         </div>
 
-                        <div class="col">
+                        <div class="col-4">
                             <label for="RESULT" aria-hidden="true" hidden>Resultat</label>
                             <div class="input-group">
-                                <input id="RESULT" name="RESULT" type="text" class="form-control" disabled>
+                                <input id="RESULT" name="RESULT" type="text" class="form-control text-end" disabled>
                                 <select name="TO" class="form-select pl-1">
                                     <option value="EUR">Euros</option>
                                     <option value="CHF">Franc Suisse</option>
@@ -49,7 +48,7 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="col-2">
+                        <div class="col-auto">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                         </div>
                     </div>
@@ -58,15 +57,14 @@ template('header', array(
             </div>
 
             <div class="row">
-            <fieldset class="col-12 mb-5">
-                <legend>Convertisseur de volume</legend>
+            <fieldset class="col-md-10 offset-md-1 mt-4 pb-4 d-flex justify-content-center">
+                <legend>Convertisseur de volumes</legend>
                 <form action="" method="post" name="convert">
-                    <div class="form-group row">
-                        <div class="col">
+                    <div class="form-group row justify-content-center">
+                        <div class="col-4">
                             <input type="hidden" name="VOLUME"/>
-                            <label for="AMOUNT" aria-hidden="true" hidden>Motant</label>
                             <div class="input-group">
-                                <input id="AMOUNT" name="AMOUNT" type="text" class="form-control" required>
+                                <input id="AMOUNT" name="AMOUNT" type="text" class="form-control text-end" required>
                                 <select name="FROM" class="form-select pl-1">
                                     <option value="1" selected>Litre</option>
                                     <option value="0.1">Décilitre</option>
@@ -76,14 +74,14 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="d-inline-flex align-items-center">
+                        <div class="col-auto d-inline-flex align-items-center">
                             <span class="ver">vaut actuellement</span>
                         </div>
 
-                        <div class="col">
+                        <div class="col-4">
                             <label for="RESULT" aria-hidden="true" hidden>Resultat</label>
                             <div class="input-group">
-                                <input id="RESULT" name="RESULT" type="text" class="form-control" disabled>
+                                <input id="RESULT" name="RESULT" type="text" class="form-control text-end" disabled>
                                 <select name="TO" class="form-select pl-1">
                                     <option value="1">Litre</option>
                                     <option value="0.1" selected>Décilitre</option>
@@ -93,7 +91,7 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="col-2">
+                        <div class="col-auto">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                         </div>
                     </div>
