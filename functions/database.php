@@ -8,16 +8,16 @@
  * return mixed
  */
 function run_query(string $query) {
-    $connection  = @mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
-    if (mysqli_connect_errno()) {
-        throw new Exception("Database connection failed: " . mysqli_connect_error());
+    $connection = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
+    if ($connection->connect_errno) {
+        throw new Exception("Database connection failed: " . $connection->connect_error);
     }
 
-    if(!$result = mysqli_query($connection, $query)) {
-        throw new Exception(mysqli_error($connection));
-    } else {
-        return $result;
+    if (!$result = $connection->query($query)) {
+        throw new Exception("Query execution failed: " . $connection->error);
     }
+
+    return $result;
 }
 
 /**
@@ -29,19 +29,30 @@ function run_query(string $query) {
  * return bolean
  */
 function insert(string $table, array $datas) {
-    $dataColumn = null;
-    $dataValues = null;
-    foreach($datas as $column => $values) {
-        $dataColumn .= $column . ",";
-        $dataValues .= "'" . $values . "',";
+    $connection = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT);
+
+    if ($connection->connect_errno) {
+        throw new Exception("Database connection failed: " . $connection->connect_error);
     }
 
-    $dataColumn = rtrim($dataColumn,',');
-    $dataValues = rtrim($dataValues,',');
+    $dataColumn = [];
+    $dataValues = [];
 
-    $query = "INSERT INTO {$table} ({$dataColumn}) VALUES({$dataValues})";
+    foreach ($datas as $column => $value) {
+        $dataColumn[] = $connection->real_escape_string($column);
+        $dataValues[] = "'" . $connection->real_escape_string($value) . "'";
+    }
 
-    return run_query($query);
+    $columns = implode(",", $dataColumn);
+    $values = implode(",", $dataValues);
+    
+    $query = "INSERT INTO $table ($columns) VALUES ($values)";
+
+    if (!$result = run_query($query)) {
+        throw new Exception("Query execution failed: " . $connection->error);
+    }
+
+    return $result;
 }
 
 /**
