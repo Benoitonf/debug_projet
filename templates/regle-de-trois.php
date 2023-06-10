@@ -20,23 +20,23 @@ template('header', array(
                 </figure>
             </div>
 
-            <div class="row justify-content-center">
+            <div class="row">
 
-                <fieldset class="col-auto mt-4 pb-3">
+                <fieldset class="col-12 mt-4">
                     <legend>Calculer X</legend>
                     <form action="" method="POST" name="regle-de-trois">
-                        <div class="form-group row pb-2 justify-content-center">
-                            <div class="col-auto">
+                        <div class="form-group row mb-2">
+                            <div class="col">
                                 <label for="a" aria-hidden="true" hidden>Nombre A</label>
                                 <div class="input-group">
                                     <input id="a" name="a" type="text" class="form-control">
                                 </div>
                             </div>
 
-                            <div class="col-auto d-inline-flex align-items-center">
+                            <div class="col-2 text-center">
                                 <span class="ver"> ----> </span>
                             </div>
-                            <div class="col-auto">
+                            <div class="col">
                                 <label for="c" aria-hidden="true" hidden>Nombre C</label>
                                 <div class="input-group">
                                     <input id="c" name="c" type="text" class="form-control">
@@ -44,18 +44,18 @@ template('header', array(
                             </div>
                         </div>
 
-                       <div class="form-group row pb-2 justify-content-center">
-                            <div class="col-auto">
+                       <div class="form-group row mb-2">
+                            <div class="col">
                                 <label for="b" aria-hidden="true" hidden>Nombre B</label>
                                 <div class="input-group">
                                     <input id="b" name="b" type="text" class="form-control">
                                 </div>
                             </div>
 
-                            <div class="col-auto d-inline-flex align-items-center">
+                            <div class="col-2 text-center">
                                 <span class="ver"> ----> </span>
                             </div>
-                            <div class="col-auto">
+                            <div class="col">
                                 <label for="d" aria-hidden="true" hidden>Nombre D</label>
                                 <div class="input-group">
                                     <input id="d" name="d" type="text" class="form-control" disabled value="X">
@@ -63,7 +63,7 @@ template('header', array(
                             </div>
                         </div>
 
-                       <div class="form-group row justify-content-center">
+                       <div class="form-group row mb-2">
                            <div class="col text-center">
                                <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                            </div>

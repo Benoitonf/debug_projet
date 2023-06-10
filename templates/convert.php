@@ -12,12 +12,12 @@ template('header', array(
             </div>
 
             <div class="row">
-            <fieldset class="col-md-10 offset-md-1 mt-4 pb-4 d-flex justify-content-center">
+            <fieldset class="col-md-10 offset-md-1 mt-4 d-flex justify-content-center">
                 <legend>Convertisseur de devises</legend>
                 <form action="" method="post" name="convert">
                     <input type="hidden" name="DEVISE"/>
                     <div class="form-group row justify-content-center">
-                        <div class="col-4">
+                        <div class="col-md-4">
                             <div class="input-group">
                                 <input id="AMOUNT" name="AMOUNT" type="text" class="form-control text-end" required>
                                 <select name="FROM" class="form-select pl-1">
@@ -30,11 +30,11 @@ template('header', array(
                             </div>
                         </div>
                         
-                        <div class="col-auto d-inline-flex align-items-center">
+                        <div class="col-auto d-inline-flex align-items-center mt-2 mb-2">
                             <span class="ver">vaut actuellement</span>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-md-4">
                             <label for="RESULT" aria-hidden="true" hidden>Resultat</label>
                             <div class="input-group">
                                 <input id="RESULT" name="RESULT" type="text" class="form-control text-end" disabled>
@@ -48,7 +48,7 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="col-auto">
+                        <div class="col-auto mt-2 mb-2">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                         </div>
                     </div>
@@ -57,11 +57,11 @@ template('header', array(
             </div>
 
             <div class="row">
-            <fieldset class="col-md-10 offset-md-1 mt-4 pb-4 d-flex justify-content-center">
+            <fieldset class="col-md-10 offset-md-1 mt-4 d-flex justify-content-center">
                 <legend>Convertisseur de volumes</legend>
                 <form action="" method="post" name="convert">
                     <div class="form-group row justify-content-center">
-                        <div class="col-4">
+                        <div class="col-md-4">
                             <input type="hidden" name="VOLUME"/>
                             <div class="input-group">
                                 <input id="AMOUNT" name="AMOUNT" type="text" class="form-control text-end" required>
@@ -74,11 +74,11 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="col-auto d-inline-flex align-items-center">
+                        <div class="col-auto d-inline-flex align-items-center mt-2 mb-2">
                             <span class="ver">vaut actuellement</span>
                         </div>
 
-                        <div class="col-4">
+                        <div class="col-md-4">
                             <label for="RESULT" aria-hidden="true" hidden>Resultat</label>
                             <div class="input-group">
                                 <input id="RESULT" name="RESULT" type="text" class="form-control text-end" disabled>
@@ -91,7 +91,7 @@ template('header', array(
                             </div>
                         </div>
 
-                        <div class="col-auto">
+                        <div class="col-auto mt-2 mb-2">
                             <button name="submit" type="submit" class="btn btn-primary btn-block">Calculer</button>
                         </div>
                     </div>

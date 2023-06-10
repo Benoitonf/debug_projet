@@ -67,7 +67,6 @@
                 let value = parseInt(decimal.value, 10);
                 if (isNaN(value))
                     return;
-                console.log("Decimal : ", decimal.value, " | Value : ", value);
                 hex.value = value.toString(16);
                 binary.value = value.toString(2);
             });

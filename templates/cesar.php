@@ -40,7 +40,7 @@ template('header', array(
 
                         <div class="row justify-content-center">
 
-                            <div class="col-4 mt-3">
+                            <div class="col-md-4 mt-3">
                                 <div class="row justify-content-center">
                                     <label for="key" class="col-sm-3 col-form-label">Clé</label>
                                     <div class="col-sm-7">
@@ -49,7 +49,7 @@ template('header', array(
                                 </div>
                                 
                             </div>
-                            <div class="col-4 mt-3 text-center">
+                            <div class="col-md-4 mt-3 text-center">
                                 <button type="submit" class="btn-block btn btn-primary" name="encrypt">Chiffrer</button>
                             </div>
                             
@@ -76,7 +76,7 @@ template('header', array(
 
                         <div class="row justify-content-center">
 
-                            <div class="col-4 mt-3">
+                            <div class="col-md-4 mt-3">
                                 <div class="row justify-content-center">
                                     <label for="key" class="col-sm-3 col-form-label">Clé</label>
                                     <div class="col-sm-7">
@@ -85,7 +85,7 @@ template('header', array(
                                 </div>
                                 
                             </div>
-                            <div class="col-4 mt-3 text-center">
+                            <div class="col-md-4 mt-3 text-center">
                                 <button type="submit" class="btn-block btn btn-primary" name="decrypt">Déchiffrer</button>
                             </div>
                             
